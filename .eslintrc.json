@@ -3,10 +3,11 @@
     "browser": true,
     "es2021": true
   },
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "tailwindcss"],
   "extends": [
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
+    "plugin:tailwindcss/recommended",
     "next",
     "prettier"
   ],
@@ -20,6 +21,7 @@
   },
   "rules": {
     "@typescript-eslint/no-unused-vars": "error",
-    "@typescript-eslint/no-explicit-any": "error"
+    "@typescript-eslint/no-explicit-any": "error",
+    "tailwindcss/no-custom-classname": "off"
   }
 }
