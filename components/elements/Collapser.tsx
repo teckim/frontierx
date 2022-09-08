@@ -1,4 +1,5 @@
 import { ReactNode, useState } from 'react'
+import cls from 'classnames'
 import CirclesIcon from '@/assets/icons/circles.svg'
 import ChevronDownIcon from '@/assets/icons/chevron-down.svg'
 import QuestionMarkIcon from '@/assets/icons/question-mark.svg'
@@ -27,9 +28,15 @@ const Collapser = ({
         <div className="mr-auto ml-2">{isHintable && <QuestionMarkIcon />}</div>
         <ChevronDownIcon />
       </button>
-      {open && (
-        <div className="mx-7 mb-12 max-h-80 overflow-y-scroll">{children}</div>
-      )}
+      <div
+        className={cls(
+          'mx-7 mb-12 overflow-y-scroll transition-all duration-500',
+          { 'mb-0 opacity-0': !open }
+        )}
+        style={{ maxHeight: open ? '336px' : '0' }}
+      >
+        {children}
+      </div>
     </div>
   )
 }
