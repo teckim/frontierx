@@ -18,7 +18,7 @@ const Collapser = ({
   const [open, setOpen] = useState(isOpen)
 
   return (
-    <div className="block rounded bg-dark">
+    <div className="block rounded bg-dark/50">
       <button
         className="flex w-full items-center py-8 px-7"
         onClick={() => setOpen(!open)}
